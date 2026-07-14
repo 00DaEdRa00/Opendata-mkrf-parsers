@@ -1,0 +1,10 @@
+# Парсер с api opendata.mkrf с конвертацией в csv
+
+Использует захардкоженный запрос сразу с поиском по всей Вологодской области
+```python
+API_URL = 'https://opendata.mkrf.ru/v2/culture_palaces_clubs/$?f={"data.general.locale.name":{"$contain":"Волог"}}&l=1000'
+```
+
+* X-API-KEY не требуется.
+* Датасет используется по умолчанию самый новый. 
+* Версия данных V3 автоматически
