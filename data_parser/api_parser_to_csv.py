@@ -71,15 +71,20 @@ COLUMNS = [
 
 
 def fetch_data():
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    session.get(STARTED_URL)
-
-    resp = session.get(API_URL)
-    print(f"opendata.mkrf.ru/v2: {resp.status_code}")
-
-    resp.raise_for_status()
-    raw = resp.json()
+    try:    
+        session = requests.Session()
+        session.headers.update(HEADERS)
+        session.get(STARTED_URL)
+    
+        resp = session.get(API_URL)
+        print(f"opendata.mkrf.ru/v2: {resp.status_code}")
+    
+        resp.raise_for_status()
+        raw = resp.json()
+    
+    except Exception as e:
+        print(f"Ошибка: {e}")
+        return None
 
     #with open(JSON_FILE, "w", encoding="cp1251") as f:
     #    json.dump(raw, f, indent=2, ensure_ascii=False)
