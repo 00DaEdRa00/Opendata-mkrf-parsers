@@ -1,7 +1,6 @@
 from datetime import datetime
 import requests
 import json
-import sys
 
 started_url = "https://opendata.mkrf.ru/opendata/7705851331-culture_palaces_clubs/"
 
